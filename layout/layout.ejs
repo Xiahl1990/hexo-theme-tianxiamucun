@@ -1,0 +1,12 @@
+<%- partial('common/head') %>
+<body class="<%- theme.customize.layout.skin %> sidebar-mini">
+    <div id="container" class="wrapper">
+        <%- partial('common/header', null, {cache: !config.relative_link}) %>
+        <%- partial('common/mainSidebar', null, {cache: !config.relative_link}) %>
+        <%- partial('common/content', null, {cache: !config.relative_link}) %>
+        <%- partial('common/footer', null, {cache: !config.relative_link}) %>
+        <%- partial('common/controlSidebar', null, {cache: !config.relative_link}) %>
+    </div>
+    <%- partial('common/scripts', null, {cache: !config.relative_link}) %>
+</body>
+</html>
