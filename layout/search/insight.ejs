@@ -22,8 +22,8 @@
         },
         ROOT_URL: '<%= config.root %>',
         CONTENT_URL: '<%- url_for("/content.json")%>',
+        INPUTSELECTOR: '#search-input-group'
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<%- js('js/insight') %>
