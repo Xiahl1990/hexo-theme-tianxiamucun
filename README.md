@@ -1,7 +1,7 @@
 #hexo-theme-tianxiamucun
 <p align="center">
     <a href="https://github.com/Xiahl1990/hexo-theme-tianxiamucun" target="_blank">
-        <img src="http://xiahl1990.github.io/Xiahl1990_LearningResource/resources/xiahl.top_.png">
+        <img src="http://xiahl.top/img/xiahl.top_.png">
     </a>
 </p>
 
