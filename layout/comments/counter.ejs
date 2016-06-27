@@ -1,9 +1,9 @@
 <% if (post.comments) { %>
     <% if (theme.disqus.on) { %>
-        <a href="<%- post.permalink %>#comments" class="article-comment-link disqus-comment-count" data-disqus-url="<%= post.permalink %>"><%= __('article.comments') %></a>
+        <a href="<%- post.permalink %>#comments" class="show article-comment-link disqus-comment-count" data-disqus-url="<%= post.permalink %>"><%= __('article.comments') %></a>
     <% } else if (theme.duoshuo.on) { %>
-        <a href="<%- post.permalink %>#comments" class="article-comment-link ds-thread-count" data-thread-key="<%= post.permalink %>"><%= __('article.comments') %></a>
+        <a href="<%- post.permalink %>#comments" class="show article-comment-link ds-thread-count" data-thread-key="<%= post.permalink %>"><%= __('article.comments') %></a>
     <% } else if (theme.youyan.on) { %>
-        <a href="<%- post.permalink %>#comments" class="article-comment-link"><%= __('article.comments') %></a>
+        <a href="<%- post.permalink %>#comments" class="show article-comment-link"><%= __('article.comments') %></a>
     <% } %>
 <% } %>
