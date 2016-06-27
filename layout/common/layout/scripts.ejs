@@ -4,6 +4,19 @@
 <!-- Pace -->
 <%- js('vendor/pace/pace.min') %>
 
+<!-- slimScroll -->
+<%- js('vendor/slimScroll/jquery.slimscroll.min') %>
+<script>
+    $(function(){
+        $('.content-wrapper').slimScroll({
+            height: $(window).height()-$('#header').height(),
+            distance: '-2px',
+            allowPageScroll: true,
+            touchScrollStep: 10000
+        });
+    });
+</script>
+
 <!-- comment   -->
 <% if (is_post()) { %>
     <%- partial('comment/scripts', { page: page }) %>
