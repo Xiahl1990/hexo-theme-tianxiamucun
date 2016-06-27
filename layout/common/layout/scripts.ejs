@@ -1,8 +1,13 @@
 <!-- Bootstrap -->
 <%- js('vendor/bootstrap/js/bootstrap.min') %>
 
+<!-- Pace -->
+<%- js('vendor/pace/pace.min') %>
+
 <!-- comment   -->
-<%- partial('comment/scripts', { page: page }) %>
+<% if (is_post()) { %>
+    <%- partial('comment/scripts', { page: page }) %>
+<% } %>
 
 <!-- analytics -->
 <%- partial('plugin/scripts') %>
