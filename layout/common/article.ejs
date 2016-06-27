@@ -40,6 +40,6 @@
     <% } %>
 </article>
 
-<% if (!index) { %>
+<% if (!index && post.comments) { %>
     <%- partial('comment/index') %>
 <% } %>

@@ -4,13 +4,11 @@
 <!-- Pace -->
 <%- js('vendor/pace/pace.min') %>
 
-<!-- slimScroll -->
-<%- js('vendor/slimScroll/jquery.slimscroll.min') %>
+<!-- niceScroll -->
+<%- js('vendor/nicescroll/jquery.nicescroll.min') %>
 <script>
     $(function(){
-        $('.content-wrapper').slimScroll({
-            height: $(window).height()-101
-        });
+        $("html").niceScroll();
     });
 </script>
 
