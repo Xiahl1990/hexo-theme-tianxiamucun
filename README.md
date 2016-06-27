@@ -1,10 +1,5 @@
 #hexo-theme-tianxiamucun
-<p align="center">
-    <a href="https://github.com/Xiahl1990/hexo-theme-tianxiamucun" target="_blank">
-        <img src="http://xiahl.top/img/xiahl.top_.png">
-    </a>
-</p>
-
+![hexo-theme-tianxiamucun](http://xiahl.top/img/xiahl.top_.png "hexo-theme-tianxiamucun")
 &emsp;&emsp;Theme **[tianxiamucun][0]** relies on [Hexo-Theme-icarus][1] and [AdminLTE][2], 
 thanks for the author [ppoffice][3] and Almsaeed Studio. 
 Fix some bugs, change lots of styles, add several features. 

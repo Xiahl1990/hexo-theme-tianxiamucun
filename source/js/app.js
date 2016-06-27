@@ -16,6 +16,49 @@ if (typeof jQuery === "undefined") {
   throw new Error("AdminLTE requires jQuery");
 }
 
+/**
+   * Store a new settings in the browser
+   *
+   * @param String name Name of the setting
+   * @param String val Value of the setting
+   * @returns void
+   */
+  function store(name, val) {
+    if (typeof (Storage) !== "undefined") {
+      localStorage.setItem(name, val);
+    } else {
+      window.alert('Please use a modern browser to properly view this template!');
+    }
+  }
+
+  /**
+   * Get a prestored setting
+   *
+   * @param String name Name of of the setting
+   * @returns String The value of the setting | null
+   */
+  function get(name) {
+    if (typeof (Storage) !== "undefined") {
+      return localStorage.getItem(name);
+    } else {
+      window.alert('Please use a modern browser to properly view this template!');
+    }
+  }
+
+  /**
+   * Remove a prestored setting
+   *
+   * @param String name Name of of the setting
+   * @returns String The value of the setting | null
+   */
+  function remove(name) {
+    if (typeof (Storage) !== "undefined") {
+      return localStorage.removeItem(name);
+    } else {
+      window.alert('Please use a modern browser to properly view this template!');
+    }
+  }
+  
 /* AdminLTE
  *
  * @type Object
@@ -206,6 +249,28 @@ $(function () {
     });
   }
 
+  // Setting sidebar collapse
+  var screenSizes = $.AdminLTE.options.screenSizes;
+  if(get("iscollapse") === "false" || get("iscollapse") === null){
+    //Enable sidebar push menu
+    if ($(window).width() > (screenSizes.sm - 1)) {
+      $("body").removeClass('sidebar-collapse').trigger('expanded.pushMenu');
+    }
+    //Handle sidebar push menu for small screens
+    else {
+      $("body").addClass('sidebar-open').trigger('expanded.pushMenu');
+    }    
+  }else{
+    //Enable sidebar push menu
+    if ($(window).width() > (screenSizes.sm - 1)) {
+      $("body").addClass('sidebar-collapse').trigger('collapsed.pushMenu');
+    }
+    //Handle sidebar push menu for small screens
+    else {
+      $("body").removeClass('sidebar-open').removeClass('sidebar-collapse').trigger('collapsed.pushMenu');
+    }
+  }
+
   /*
    * INITIALIZE BUTTON TOGGLE
    * ------------------------
@@ -321,16 +386,20 @@ function _init() {
         if ($(window).width() > (screenSizes.sm - 1)) {
           if ($("body").hasClass('sidebar-collapse')) {
             $("body").removeClass('sidebar-collapse').trigger('expanded.pushMenu');
+            store("iscollapse",false);
           } else {
             $("body").addClass('sidebar-collapse').trigger('collapsed.pushMenu');
+            store("iscollapse",true);
           }
         }
         //Handle sidebar push menu for small screens
         else {
           if ($("body").hasClass('sidebar-open')) {
             $("body").removeClass('sidebar-open').removeClass('sidebar-collapse').trigger('collapsed.pushMenu');
+            store("iscollapse",true);
           } else {
             $("body").addClass('sidebar-open').trigger('expanded.pushMenu');
+            store("iscollapse",false);
           }
         }
       });
@@ -1030,4 +1099,42 @@ function _init() {
   if ($('#comments').length) {
     $('.to-comment').show();
   }
+ 
+  // Setting skin
+  function change_skin(cls) {
+    var my_skins = [
+      "skin-blue",
+      "skin-black",
+      "skin-red",
+      "skin-yellow",
+      "skin-purple",
+      "skin-green",
+      "skin-blue-light",
+      "skin-black-light",
+      "skin-red-light",
+      "skin-yellow-light",
+      "skin-purple-light",
+      "skin-green-light"
+    ];
+    $.each(my_skins, function (i) {
+      $("body").removeClass(my_skins[i]);
+    });
+
+    $("body").addClass(cls);
+    return false;
+  }
+
+  if(get("skin")){
+    change_skin(get("skin"));
+  }else{
+    store("skin","skin-yellow");
+    change_skin(get("skin"));
+  }
+
+  $('#skins-list').on('click','li',function(e){
+    var skin = $(this).find('p').data("skin");
+    remove("skin")
+    store("skin",skin);      
+    change_skin(get("skin"));
+  })
 })(jQuery);
