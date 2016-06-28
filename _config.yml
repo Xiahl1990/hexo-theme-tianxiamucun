@@ -63,8 +63,8 @@ search:
 # Conments
 preload_comment: true
 disqus:
-  #on: true
-  shortname:
+  on: true
+  shortname: xiahl
 duoshuo:
   #on: true
   domain:
