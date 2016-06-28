@@ -59,3 +59,31 @@
           }) %>
     <% } %>
 <% } %>
+
+<% if (is_post()){ %>
+    <section class="scroll" id="article-nav-button">
+        <% if (post.prev){ %>
+            <a href="<%- url_for(post.prev.path) %>" title="上一篇">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        <% } else { %>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        <% } %>
+
+        <a href="/archives" title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times hide"></i></a>
+
+        <% if (post.next){ %>
+            <a href="<%- url_for(post.next.path) %>" title="下一篇">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        <% } else { %>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        <% } %>
+    </section>
+<% } %>
+
+<section class="scroll" id="article-scroll-button">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="if (<%- !theme.preload_comment %>) load$hide(); return false;" title="查看评论" class="to-comment" style="display: none;"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</section>
