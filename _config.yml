@@ -1,0 +1,93 @@
+# Menus
+menu:
+  Home:
+    link: .
+    link_icon: fa-home
+  Archives:
+    link: archives
+    link_icon: fa-home
+  Categories:
+    link: categories
+    link_icon: fa-home
+  Tags:
+    link: tags
+    link_icon: fa-home
+  About:
+    link: about
+    link_icon: fa-home
+
+# Customize
+customize:
+    logo:
+        mini: xhl
+        lg: 夏红林
+    profile:
+        enabled: true # Whether to show profile bar
+        user_image: /img/user2-160x160.jpg
+        gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
+        user_name: Xiahl
+        user_title: Web Developer & Designer
+        user_location: Harbin, China
+        follow: https://github.com/ppoffice/
+    highlight: monokai
+    layout:
+        skin: skin-blue
+    sidebar: right # sidebar position, options: left, right
+    control_sidebar:
+        bg_color: control-sidebar-dark
+    thumbnail: true # enable posts thumbnail, options: true, false
+    favicon: # path to favicon
+    social_links:
+        github: http://github.com/ppoffice/hexo-theme-icarus
+        twitter: /
+        facebook: /
+        dribbble: /
+        rss: /
+    social_link_tooltip: true # enable the social link tooltip, options: true, false
+
+# Widgets
+widgets:
+    - recent_posts
+    - category
+    - archive
+    - tag
+    - tagcloud
+    - links
+
+# Search
+search:
+    insight: true # you need to install `hexo-generator-json-content` before using Insight Search
+    swiftype: #eNk1MFFt1dSM2c_F8Mv7 # enter swiftype install key here
+    baidu: false # you need to disable other search engines to use Baidu search, options: true, false
+
+# Conments
+preload_comment: true
+disqus:
+  #on: true
+  shortname:
+duoshuo:
+  #on: true
+  domain:
+youyan:
+  #on: true
+  id:
+
+# Share
+share: default # options: jiathis, bdshare, addtoany, default
+
+# Plugins
+plugins:
+    fancybox: true # options: true, false
+    google_analytics: # enter the tracking ID for your Google Analytics
+    google_site_verification: # enter Google site verification code
+    baidu_analytics: # enter Baidu Analytics hash key
+
+# Miscellaneous
+miscellaneous:
+    open_graph: # see http://ogp.me
+        fb_app_id:
+        fb_admins:
+        twitter_id:
+        google_plus:
+    links:
+        Hexo: http://hexo.io
