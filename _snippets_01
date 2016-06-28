@@ -1,0 +1,11 @@
+/**
+   * Fixing a article-nav-button respon
+   *
+   */
+  function fixNavButton(iscollapse) {
+    var _left = iscollapse === "true" ? 50 : 230;
+    $("#article-nav-button").css("left",_left);
+  }
+  
+  
+  fixNavButton(get("iscollapse"));
