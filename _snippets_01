@@ -9,3 +9,11 @@
   
   
   fixNavButton(get("iscollapse"));
+  
+  if($('#editormd').length>0){
+    var _height = parseInt($(".content-wrapper").css("min-height")).toString();
+    window.editor = editormd("editormd", {
+        path : "/vendor/editor/lib/",
+        height : _height
+    });
+  }
