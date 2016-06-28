@@ -5,16 +5,19 @@ menu:
     link_icon: fa-home
   Archives:
     link: archives
-    link_icon: fa-home
+    link_icon: fa-folder
   Categories:
     link: categories
-    link_icon: fa-home
+    link_icon: fa-copy
   Tags:
     link: tags
-    link_icon: fa-home
+    link_icon: fa-tags
+  Editor:
+    link: editor
+    link_icon: fa-edit
   About:
     link: about
-    link_icon: fa-home
+    link_icon: fa-info-circle
 
 # Customize
 customize:
@@ -61,7 +64,7 @@ search:
     baidu: false # you need to disable other search engines to use Baidu search, options: true, false
 
 # Conments
-preload_comment: true
+preload_comment: false
 disqus:
   on: true
   shortname: xiahl
