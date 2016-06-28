@@ -58,6 +58,15 @@ if (typeof jQuery === "undefined") {
       window.alert('Please use a modern browser to properly view this template!');
     }
   }
+
+  /**
+   * Fixing a article-nav-button respon
+   *
+   */
+  function fixNavButton(iscollapse) {
+    var _left = iscollapse === "true" ? 50 : 230;
+    $("#article-nav-button").css("left",_left);
+  }
   
 /* AdminLTE
  *
@@ -271,6 +280,8 @@ $(function () {
     }
   }
 
+  fixNavButton(get("iscollapse"));
+
   /*
    * INITIALIZE BUTTON TOGGLE
    * ------------------------
@@ -282,8 +293,23 @@ $(function () {
       $(this).addClass("active");
       e.preventDefault();
     });
-
   });
+
+  /*
+   * INITIALIZE EDITOR TO MARKDOWN
+   * ------------------------
+   */
+  if($('#editormd').length>0){
+    var _height = parseInt($(".content-wrapper").css("min-height")).toString();
+    window.editor = editormd("editormd", {
+        path : "/vendor/editor/lib/",
+        height : _height,
+        saveHTMLToTextarea: true,
+        flowChart: true,
+        toolbarIcons: "simple"
+    });
+  }
+
 });
 
 /* ----------------------------------
@@ -402,6 +428,9 @@ function _init() {
             store("iscollapse",false);
           }
         }
+        
+        fixNavButton(get("iscollapse"));
+
       });
 
       $(".content-wrapper").click(function () {
