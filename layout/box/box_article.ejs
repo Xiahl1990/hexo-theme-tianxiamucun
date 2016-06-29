@@ -1,5 +1,5 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
-     <div class="box box-primary collapsed-box">
+     <div class="box box-primary">
         <% if (post.link || post.title) { %>
             <div class="box-header ui-sortable-handle" style="cursor: move;">
                 <%- partial('common/post/title', { class_name: 'article-title' }) %>
@@ -9,8 +9,7 @@
                     <%- partial('common/post/tag') %>
                 </div>
                 <div class="box-tools pull-right">
-                    <span data-toggle="tooltip" title="" class="badge bg-light-blue disqus-comment-count" data-disqus-identifier="<%= page.path %>" data-original-title="3 New Messages"></span>
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
                     <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
                     </button>
