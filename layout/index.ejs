@@ -1,7 +1,13 @@
-<% page.posts.each(function(post) { %>
-    <%- partial('box/box_article', { post: post, index: true }) %>
-<% }); %>
+<div class="container">
+    <div class="row">
+        <% page.posts.each(function(post,index) { %>
+            <%- partial('box/box_article', { post: post, index: true }) %>
+        <% }); %>
+    </div>
+</div>
+
 <%- partial('widget/article_scroll_button') %>
+
 <% if (page.total > 1) { %>
     <nav id="page-nav">
         <%- paginator({
