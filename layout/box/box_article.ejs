@@ -1,0 +1,44 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+     <div class="box box-primary collapsed-box">
+        <% if (post.link || post.title) { %>
+            <div class="box-header ui-sortable-handle" style="cursor: move;">
+                <%- partial('common/post/title', { class_name: 'article-title' }) %>
+                <div class="article-meta">
+                    <%- partial('common/post/date', { class_name: 'article-date', date_format: null }) %>
+                    <%- partial('common/post/category') %>
+                    <%- partial('common/post/tag') %>
+                </div>
+                <div class="box-tools pull-right">
+                    <span data-toggle="tooltip" title="" class="badge bg-light-blue disqus-comment-count" data-disqus-identifier="<%= page.path %>" data-original-title="3 New Messages"></span>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+              </div>
+            </div>
+        <% } %>
+        <div class="box-body" itemprop="articleBody">
+        <% if (index && post.excerpt) { %>
+            <p><%- post.excerpt %></p>
+            <p class="article-more-link">
+                <a href="<%- url_for(post.path) %>#more"><%= __('article.more') %></a>
+            </p>
+        <% } else { %>
+            <% if (!index && post.toc) { %>
+                <div id="toc" class="toc-article">
+                <strong class="toc-title"><%= __('article.catalogue') %></strong>
+                    <%- toc(post.content) %>
+                </div>
+            <% } %>
+            <%- post.content %>
+        <% } %>
+        </div>
+        <div class="box-footer">
+            <%- partial('share/index', { post: post }) %>
+            <%- partial('comments/counter', { post: post }) %>
+        </div>
+    </div>
+    <% if (!index) { %>
+        <%- partial('common/post/nav') %>
+    <% } %>
+</article>
