@@ -1115,7 +1115,7 @@ a:focus {
 }
 @media (max-width: 991px) {
   .navbar-nav > .user-menu > .dropdown-menu > .user-body a {
-    background: #fff !important;
+    background: #eee !important;
     color: #444 !important;
   }
 }

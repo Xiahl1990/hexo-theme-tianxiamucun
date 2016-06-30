@@ -31,15 +31,30 @@
                             <img src="<%- theme.customize.profile.user_image %>" class="img-circle" alt="User Image">
                             <p>
                                 <%- theme.customize.profile.user_title %>
+                            </p>
+                            <p>
                                 <%- theme.customize.profile.user_location %>
                             </p>
                         </li>
                         <!-- Menu Body -->
                         <li class="user-body">
+                          <nav class="header-nav">
+                            <ul class="social">
+                                <% for (var i in theme.customize.social_links){ %>
+                                    <a class="fa <%= theme.customize.social_links[i].link_icon %> " 
+                                    href="<%- url_for(theme.customize.social_links[i].link) %>" 
+                                    title="<%= i %>" 
+                                    style="background-color: <%= theme.customize.social_links[i].bg_color %> !important"></a>
+                                <%}%>
+                            </ul>
+                          </nav>                           
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
                             <div class="row">
-                              <div class="col-xs-12 text-center">
-                                <a href="<%- theme.customize.profile.follow %>">Follow</a>
-                              </div>
+                                <div class="col-xs-12 text-center">
+                                    <a href="<%- theme.customize.profile.follow %>">Follow</a>
+                                </div>
                             </div>
                         </li>
                     </ul>
