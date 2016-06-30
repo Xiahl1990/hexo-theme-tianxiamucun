@@ -31,7 +31,7 @@ customize:
         user_name: Xiahl
         user_title: Web Developer & Designer
         user_location: Harbin, China
-        follow: https://github.com/ppoffice/
+        follow: https://github.com/Xiahl1990
     highlight: monokai
     layout:
         skin: skin-blue
@@ -41,11 +41,26 @@ customize:
     thumbnail: true # enable posts thumbnail, options: true, false
     favicon: # path to favicon
     social_links:
-        github: http://github.com/ppoffice/hexo-theme-icarus
-        twitter: /
-        facebook: /
-        dribbble: /
-        rss: /
+      Email: 
+        link: "mailto:xiahl1990@gmail.com"
+        link_icon: fa-email
+        bg_color: "#90C9E2"
+      GitHub: 
+        link: "https://github.com/Xiahl1990"
+        link_icon: fa-github
+        bg_color: "#F5F5F5"
+      RSS: 
+        link: "/atom.xml"   
+        link_icon: fa-rss
+        bg_color: "#EB965D"
+      WeiBo:
+        link: ""
+        link_icon: fa-weibo
+        bg_color: "#E8CA86"
+      WeiXin:
+        link: ""
+        link_icon: fa-weixin
+        bg_color: "#27AE60"
     social_link_tooltip: true # enable the social link tooltip, options: true, false
 
 # Widgets
