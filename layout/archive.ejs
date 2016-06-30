@@ -22,6 +22,9 @@
         </div>
     <% }); %>
 </div>
+
+<%- partial('widget/article_scroll_button') %>
+
 <% if (page.total > 1) { %>
     <nav id="page-nav">
         <%- paginator({
