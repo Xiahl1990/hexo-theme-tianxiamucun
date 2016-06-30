@@ -58,16 +58,19 @@ if (typeof jQuery === "undefined") {
       window.alert('Please use a modern browser to properly view this template!');
     }
   }
-
+ 
   /**
-   * Fixing a article-nav-button respon
-   *
+   * INITIALIZE EDITOR TO MARKDOWN
+   * ------------------------
    */
-  function fixNavButton(iscollapse) {
-    var _left = iscollapse === "true" ? 50 : 230;
-    $("#article-nav-button").css("left",_left);
+  function initEditor(){
+    var _height = parseInt($(".content-wrapper").css("min-height")).toString();
+    window.editor = editormd("editormd", {
+        path : "/vendor/editor/lib/",
+        height : _height
+    });
   }
-  
+
 /* AdminLTE
  *
  * @type Object
@@ -264,23 +267,26 @@ $(function () {
     //Enable sidebar push menu
     if ($(window).width() > (screenSizes.sm - 1)) {
       $("body").removeClass('sidebar-collapse').trigger('expanded.pushMenu');
+      $("#article-nav-button").css("left","230px");
     }
     //Handle sidebar push menu for small screens
     else {
       $("body").addClass('sidebar-open').trigger('expanded.pushMenu');
+      $("#article-nav-button").css("left","0px");
     }    
   }else{
     //Enable sidebar push menu
     if ($(window).width() > (screenSizes.sm - 1)) {
       $("body").addClass('sidebar-collapse').trigger('collapsed.pushMenu');
+      $("#article-nav-button").css("left","50px");
     }
     //Handle sidebar push menu for small screens
     else {
       $("body").removeClass('sidebar-open').removeClass('sidebar-collapse').trigger('collapsed.pushMenu');
+      $("#article-nav-button").css("left","0px");
     }
   }
 
-  fixNavButton(get("iscollapse"));
 
   /*
    * INITIALIZE BUTTON TOGGLE
@@ -300,14 +306,8 @@ $(function () {
    * ------------------------
    */
   if($('#editormd').length>0){
-    var _height = parseInt($(".content-wrapper").css("min-height")).toString();
-    window.editor = editormd("editormd", {
-        path : "/vendor/editor/lib/",
-        height : _height,
-        saveHTMLToTextarea: true,
-        flowChart: true,
-        toolbarIcons: "simple"
-    });
+      initEditor();
+      $(window).resize(initEditor);
   }
 
 });
@@ -413,9 +413,11 @@ function _init() {
           if ($("body").hasClass('sidebar-collapse')) {
             $("body").removeClass('sidebar-collapse').trigger('expanded.pushMenu');
             store("iscollapse",false);
+            $("#article-nav-button").css("left","230px");
           } else {
             $("body").addClass('sidebar-collapse').trigger('collapsed.pushMenu');
             store("iscollapse",true);
+            $("#article-nav-button").css("left","50px");
           }
         }
         //Handle sidebar push menu for small screens
@@ -423,14 +425,15 @@ function _init() {
           if ($("body").hasClass('sidebar-open')) {
             $("body").removeClass('sidebar-open').removeClass('sidebar-collapse').trigger('collapsed.pushMenu');
             store("iscollapse",true);
+            $("#article-nav-button").css("left","0px");
           } else {
             $("body").addClass('sidebar-open').trigger('expanded.pushMenu');
             store("iscollapse",false);
+            $("#article-nav-button").css("left","0px");
           }
         }
         
-        fixNavButton(get("iscollapse"));
-
+        initEditor();
       });
 
       $(".content-wrapper").click(function () {

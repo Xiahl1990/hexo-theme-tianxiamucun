@@ -1,10 +1,6 @@
-<div class="container">
-    <div class="row">
-        <% page.posts.each(function(post,index) { %>
-            <%- partial('box/box_article', { post: post, index: true }) %>
-        <% }); %>
-    </div>
-</div>
+<% page.posts.each(function(post,index) { %>
+    <%- partial('box/box_article', { post: post, index: true }) %>
+<% }); %>
 
 <%- partial('widget/article_scroll_button') %>
 
