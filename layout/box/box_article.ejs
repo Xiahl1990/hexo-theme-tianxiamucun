@@ -1,41 +1,36 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
-     <div class="box">
-        <% if (post.link || post.title) { %>
-            <div class="box-header ui-sortable-handle" style="cursor: move;">
-                <%- partial('common/post/title', { class_name: 'article-title' }) %>
-                <div class="article-meta">
-                    <%- partial('common/post/date', { class_name: 'article-date', date_format: null }) %>
-                    <%- partial('common/post/category') %>
-                    <%- partial('common/post/tag') %>
-                </div>
-                <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                    </button>
-              </div>
-            </div>
-        <% } %>
-        <div class="box-body" itemprop="articleBody">
-        <% if (index && post.excerpt) { %>
-            <p><%- post.excerpt %></p>
-        <% } else { %>
-            <% if (!index && post.toc) { %>
-                <div id="toc" class="toc-article">
-                <strong class="toc-title"><%= __('article.catalogue') %></strong>
-                    <%- toc(post.content) %>
-                </div>
-            <% } %>
-            <%- post.content %>
-        <% } %>
-        </div>
-        <div class="box-footer article-more-link">
-            <a href="<%- url_for(post.path) %>#more"><%= __('article.more') %></a>
-            <%- partial('share/index', { post: post }) %>
-            <%- partial('comments/counter', { post: post }) %>
+<div class="box box-primary">
+    <div class="box-header ui-sortable-handle" style="cursor: move;">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">To Do List</h3>
+        <div class="box-tools pull-right">
+            <ul class="pagination pagination-sm inline">
+                <%- paginator({
+                    prev_text: '&laquo; ' + __('nav.prev'),
+                    next_text: __('nav.next') + ' &raquo;'
+                }) %>
+            </ul>
         </div>
     </div>
-    <% if (!index) { %>
-        <%- partial('common/post/nav') %>
-    <% } %>
-</article>
+
+    <div class="box-body">
+        <ul class="todo-list ui-sortable">
+            <% page.posts.each(function(post) { %>
+            <li>
+                <!-- drag handle -->
+                <span class="handle ui-sortable-handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                </span>
+
+                <!-- todo text -->
+                <span class="text"><a href="<%- url_for(post.path) %>"><%= post.title %></a></span>
+
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <div class="box-footer clearfix no-border hide">
+        <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+    </div>
+</div>
