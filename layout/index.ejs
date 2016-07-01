@@ -1,14 +1,6 @@
-<% page.posts.each(function(post,index) { %>
-    <%- partial('box/box_article', { post: post, index: true }) %>
-<% }); %>
-
-<%- partial('widget/article_scroll_button') %>
-
-<% if (page.total > 1) { %>
-    <nav id="page-nav">
-        <%- paginator({
-            prev_text: '&laquo; ' + __('nav.prev'),
-            next_text: __('nav.next') + ' &raquo;'
-        }) %>
-    </nav>
-<% } %>
+<div class="col-lg-7 connectedSortable">
+    <%- partial('box/box_article') %>
+</div>
+<div class="col-lg-5 connectedSortable">
+    <%- partial('widget/article_scroll_button') %>
+</div>
