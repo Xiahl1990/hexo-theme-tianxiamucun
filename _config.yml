@@ -39,7 +39,7 @@ customize:
     control_sidebar:
         bg_color: control-sidebar-dark
     thumbnail: true # enable posts thumbnail, options: true, false
-    favicon: # path to favicon
+    favicon: favicon.ico # path to favicon
     social_links:
       Email: 
         link: "mailto:xiahl1990@gmail.com"
@@ -109,3 +109,45 @@ miscellaneous:
         google_plus:
     links:
         Hexo: http://hexo.io
+
+# CDN
+bootcdn:
+    bootstrap_css: //cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.css
+    bootstrap_min_css: //cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css 
+    bootstrap_js: //cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.js
+    bootstrap_min_js: //cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js
+
+    bootstrap_datepicker3_css: //cdn.bootcss.com/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.css
+    bootstrap_datepicker3_min_css: //cdn.bootcss.com/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.min.css
+    bootstrap_datepicker_js: //cdn.bootcss.com/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.js
+    bootstrap_datepicker_min_js: //cdn.bootcss.com/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js
+    bootstrap_datepicker_zh_CN_min_js: //cdn.bootcss.com/bootstrap-datepicker/1.6.1/locales/bootstrap-datepicker.zh-CN.min.js
+
+    font_awesome_css: //cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.css
+    font_awesome_min_css: //cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css
+
+    holder_js: //cdn.bootcss.com/holder/2.9.3/holder.js
+    holder_min_js: //cdn.bootcss.com/holder/2.9.3/holder.min.js
+
+    ionicons_css: //cdn.bootcss.com/ionicons/2.0.1/css/ionicons.css
+    ionicons_min_css: //cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css
+
+    jquery_js: //cdn.bootcss.com/jquery/2.2.0/jquery.js
+    jquery_min_js: //cdn.bootcss.com/jquery/2.2.0/jquery.min.js
+
+    jquery_fancyBox_css: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css 
+    jquery_fancyBox_min_css: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css
+    jquery_fancyBox_js: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.js
+    jquery_fancyBox_min_js: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js
+    jquery_fancyBox_pack_js: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js
+
+    jquery_nicescroll_min_js: //cdn.bootcss.com/jquery.nicescroll/3.6.7/jquery.nicescroll.min.js
+    
+    jquery_ui_css: //cdn.bootcss.com/jqueryui/1.11.4/jquery-ui.css
+    jquery_ui_min_css: //cdn.bootcss.com/jqueryui/1.11.4/jquery-ui.min.css
+    jquery_ui_js: //cdn.bootcss.com/jqueryui/1.11.4/jquery-ui.js
+    jquery_ui_min_js: //cdn.bootcss.com/jqueryui/1.11.4/jquery-ui.min.js
+
+    pace_css: //cdn.bootcss.com/pace/1.0.2/themes/red/pace-theme-flash.css
+    pace_js: //cdn.bootcss.com/pace/1.0.2/pace.js
+    pace_min_js: //cdn.bootcss.com/pace/1.0.2/pace.min.js

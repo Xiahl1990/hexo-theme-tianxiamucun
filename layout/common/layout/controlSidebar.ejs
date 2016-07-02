@@ -2,7 +2,7 @@
 <aside class="control-sidebar <%- theme.customize.control_sidebar.bg_color %>">
   <!-- Create the tabs -->
   <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-    <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i> Catalogue</a></li>
+    <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i> Info</a></li>
     <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i> Setting</a></li>
   </ul>
 
@@ -11,12 +11,16 @@
 
     <!-- Home tab content -->
     <div class="tab-pane active" id="control-sidebar-home-tab">
-      <p>No</p>
+      <h4 class='control-sidebar-heading'>Motto</h4>
+      <p>No matter what to do, insist on</p>
+      <h4 class='control-sidebar-heading'>Calendar</h4>
+      <div id="calendar" style="width: 100%"></div>
     </div>
     <!-- /.tab-pane -->
 
     <!-- Settings tab content -->
     <div class="tab-pane" id="control-sidebar-settings-tab">
+      <%- partial('widget/theme_toggle_button') %>
       <%- partial('common/skin') %>
     </div>
     <!-- /.tab-pane -->

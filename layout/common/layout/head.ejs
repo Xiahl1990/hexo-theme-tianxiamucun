@@ -33,22 +33,43 @@
         <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml" />
     <% } %>
 
-    <% if (theme.favicon) { %>
-        <link rel="icon" href="<%- url_for(theme.favicon) %>" />
+    <% if (theme.customize.favicon) { %>
+        <link rel="icon" href="<%- url_for(theme.customize.favicon) %>" />
     <% } %>
 
-    <%- css('vendor/bootstrap/css/bootstrap') %>
-    <%- css('vendor/font-awesome/css/font-awesome.min') %>
-    <%- css('vendor/ionicons/css/ionicons.min') %>
-    <%- css('vendor/pace/pace.min') %>
+    <link href="<%- theme.bootcdn.bootstrap_min_css %>" rel="stylesheet">
+    <link href="<%- theme.bootcdn.font_awesome_min_css %>" rel="stylesheet">
+    <link href="<%- theme.bootcdn.ionicons_min_css %>" rel="stylesheet">
+    <link href="<%- theme.bootcdn.pace_css %>" rel="stylesheet">
+    <link href="<%- theme.bootcdn.jquery_fancyBox_min_css %>" rel="stylesheet">
+    <link href="<%- theme.bootcdn.bootstrap_datepicker3_min_css %>" rel="stylesheet">
+    
     <%- css('vendor/editor/css/editormd.min') %>
-
     <%- css('css/tianxiamucun') %>
     <%- css('css/style') %>
 
     <!-- jQuery -->
-    <%- js('vendor/jQuery/jQuery-2.2.0.min') %>
-    
+    <script src="<%- theme.bootcdn.jquery_min_js %>"></script>
+
+    <!-- jQuery UI -->
+    <script src="<%- theme.bootcdn.jquery_ui_min_js %>"></script>
+
+    <!-- Bootstrap -->
+    <script src="<%- theme.bootcdn.bootstrap_min_js %>"></script>
+
+    <!-- Pace -->
+    <script src="<%- theme.bootcdn.pace_min_js %>"></script>
+
+    <!-- niceScroll -->
+    <script src="<%- theme.bootcdn.jquery_nicescroll_min_js %>"></script>
+
+    <!-- fancyBox -->
+    <script src="<%- theme.bootcdn.jquery_fancyBox_pack_js %>"></script>
+
+    <!-- bootstrap-datepicker -->
+    <script src="<%- theme.bootcdn.bootstrap_datepicker_min_js %>"></script>
+    <script src="<%- theme.bootcdn.bootstrap_datepicker_zh_CN_min_js %>"></script>
+   
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
