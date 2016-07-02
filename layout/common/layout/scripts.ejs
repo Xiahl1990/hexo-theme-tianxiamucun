@@ -1,41 +1,3 @@
-<!-- jQuery UI -->
-<%- js('vendor/jQueryUI/jquery-ui.min') %>
-<script>
-  $(function(){
-      //Make the dashboard widgets sortable Using jquery UI
-      $(".connectedSortable").sortable({
-        placeholder: "sort-highlight",
-        connectWith: ".connectedSortable",
-        handle: ".box-header, .nav-tabs",
-        forcePlaceholderSize: true,
-        zIndex: 999999
-      });
-      $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
-
-      //jQuery UI sortable for the todo list
-      $(".todo-list").sortable({
-        placeholder: "sort-highlight",
-        handle: ".handle",
-        forcePlaceholderSize: true,
-        zIndex: 999999
-      });
-  });
-</script>
-
-<!-- Bootstrap -->
-<%- js('vendor/bootstrap/js/bootstrap.min') %>
-
-<!-- Pace -->
-<%- js('vendor/pace/pace.min') %>
-
-<!-- niceScroll -->
-<%- js('vendor/nicescroll/jquery.nicescroll.min') %>
-<script>
-    $(function(){
-        $("html").niceScroll();
-    });
-</script>
-
 <!-- editormd -->
 <%- js('vendor/editor/editormd') %>
 
@@ -44,3 +6,39 @@
 
 <!-- Custom Scripts -->
 <%- js('js/app') %>
+
+<!-- Init Scripts -->
+<script>
+  $(function(){
+
+      $("html").niceScroll();
+
+      //jQuery UI sortable for the todo list
+      $(".todo-list").sortable({
+        placeholder: "sort-highlight",
+        handle: ".handle",
+        forcePlaceholderSize: true,
+        zIndex: 999999
+      });
+
+      $(".fancybox-thumb").fancybox({
+        prevEffect  : 'none',
+        nextEffect  : 'none',
+        helpers : {
+          title : {
+            type: 'inside'
+          },
+          thumbs  : {
+            width : 50,
+            height  : 50
+          }
+        }
+      });
+
+      $("#calendar").datepicker({
+        todayHighlight: true,
+        language: "zh-CN"
+      });
+
+  });
+</script>
