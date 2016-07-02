@@ -26,11 +26,11 @@ customize:
         lg: 夏红林
     profile:
         enabled: true # Whether to show profile bar
-        user_image: /img/user2-160x160.jpg
+        user_image: /img/xiahl.jpg
         gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
         user_name: Xiahl
         user_title: Web Developer & Designer
-        user_location: Harbin, China
+        user_location: Shenzhen, China
         follow: https://github.com/Xiahl1990
     highlight: monokai
     layout:
@@ -62,6 +62,28 @@ customize:
         link_icon: fa-weixin
         bg_color: "#27AE60"
     social_link_tooltip: true # enable the social link tooltip, options: true, false
+
+# Fancybox thumb
+fancybox_thumb:
+        FFzTVldq:
+        FFzWjuxY:
+        FFzTXdbO:
+        FFzU4h8I:
+        FFzU8XM8:
+        FFzUaXCt:
+        FFzUi3nZ:
+        FFzUi8gf:
+        FFzUlgux:
+        FFzUpGUm:
+        FFzUr0NG:
+        FFzUs57o:
+        FFzUKwpK:
+        FFzVl5d0:
+        FFzVAiM8:
+        FFzW1a8u:
+        FFzW8DZ9:
+        FFzWfBUl:
+        
 
 # Widgets
 widgets:
@@ -140,6 +162,11 @@ bootcdn:
     jquery_fancyBox_js: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.js
     jquery_fancyBox_min_js: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js
     jquery_fancyBox_pack_js: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js
+    jquery_fancyBox_buttons_css: //cdn.bootcss.com/fancybox/2.1.5/helpers/jquery.fancybox-buttons.css
+    jquery_fancyBox_buttons_js: //cdn.bootcss.com/fancybox/2.1.5/helpers/jquery.fancybox-buttons.js
+    jquery_fancyBox_media_js: //cdn.bootcss.com/fancybox/2.1.5/helpers/jquery.fancybox-media.js
+    jquery_fancyBox_thumbs_css: //cdn.bootcss.com/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.css
+    jquery_fancyBox_thumbs_js: //cdn.bootcss.com/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js
 
     jquery_nicescroll_min_js: //cdn.bootcss.com/jquery.nicescroll/3.6.7/jquery.nicescroll.min.js
     
