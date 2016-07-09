@@ -20,7 +20,7 @@
       <li class="header">HEADER</li>
       <!-- Optionally, you can add icons to the links -->
       <% for (var i in theme.menu) { %>
-        <li><a class="main-nav-link" href="<%- url_for(theme.menu[i].link) %>"><i class="fa <%- theme.menu[i].link_icon %>"></i> <span><%= i %></span></a></li>
+        <li><a class="main-nav-link" href="<%- url_for(theme.menu[i].link) %>"><i class="fa <%- theme.menu[i].link_icon %>"></i> <span><%= __('menu.' + i) %></span></a></li>
       <% } %>
     </ul>
     <!-- /.sidebar-menu -->

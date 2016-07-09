@@ -162,11 +162,11 @@
         atLink               : true,           // for @link
         emailLink            : true,           // for email address auto link
         taskList             : false,          // Enable Github Flavored Markdown task lists
-        emoji                : false,          // :emoji: , Support Github emoji, Twitter Emoji (Twemoji);
+        emoji                : true,          // :emoji: , Support Github emoji, Twitter Emoji (Twemoji);
                                                // Support FontAwesome icon emoji :fa-xxx: > Using fontAwesome icon web fonts;
                                                // Support Editor.md logo icon emoji :editormd-logo: :editormd-logo-1x: > 1~8x;
         tex                  : false,          // TeX(LaTeX), based on KaTeX
-        flowChart            : false,          // flowChart.js only support IE9+
+        flowChart            : true,          // flowChart.js only support IE9+
         sequenceDiagram      : false,          // sequenceDiagram.js only support IE9+
         previewCodeHighlight : true,
                 
