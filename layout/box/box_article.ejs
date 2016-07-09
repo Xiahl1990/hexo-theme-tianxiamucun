@@ -1,7 +1,12 @@
+<style>
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+</style>
 <div class="box box-primary">
     <div class="box-header with-border">
         <i class="ion ion-clipboard"></i>
-        <h3 class="box-title">Post List</h3>
+        <h3 class="box-title"><%- __('index.box') %></h3>
         <div class="box-tools pull-right">
             <ul class="pagination pagination-sm inline">
                 <%- paginator({
@@ -25,8 +30,26 @@
                 <!-- todo text -->
                 <span class="text"><a href="<%- url_for(post.path) %>"><%= post.title %></a></span>
                 <small class="label label-<% if(post.label){ %><%- post.label %><% } else { %>default<% } %>" 
-                itemprop="datePublished"><i class="fa fa-calendar"></i> <%= date(post.date, null) %></small>
-
+                itemprop="datePublished">
+                    <i class="fa fa-calendar"></i> <%= date(post.date, null) %>
+                </small>
+                <small class="label label-default" 
+                itemprop="categories">
+                    <i class="fa fa-folder"></i>
+                    <%- list_categories(post.categories, {
+                        show_count: false,
+                        class: 'article-category',
+                        style: 'none',
+                        separator: '<i class="fa fa-angle-right"></i>'
+                    }) %>
+                </small>
+                <small class="label label-default" 
+                itemprop="tags">
+                    <i class="fa fa-tag"></i>
+                    <%- list_tags(post.tags, { show_count: false, style: 'link' }) %>
+                </small>
+                <div class="tools">
+                </div>
             </li>
             <% }); %>
         </ul>
