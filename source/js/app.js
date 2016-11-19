@@ -58,7 +58,7 @@ if (typeof jQuery === "undefined") {
       window.alert('Please use a modern browser to properly view this template!');
     }
   }
- 
+
   /**
    * INITIALIZE EDITOR TO MARKDOWN
    * ------------------------
@@ -273,7 +273,7 @@ $(function () {
     else {
       $("body").addClass('sidebar-open').trigger('expanded.pushMenu');
       $("#article-nav-button").css("left","0px");
-    }    
+    }
   }else{
     //Enable sidebar push menu
     if ($(window).width() > (screenSizes.sm - 1)) {
@@ -432,7 +432,7 @@ function _init() {
             $("#article-nav-button").css("left","0px");
           }
         }
-        
+
         initEditor();
       });
 
@@ -893,7 +893,7 @@ function _init() {
           case 'PAGES':
               $searchItems = array.map(function (item) {
                   // Use config.root instead of permalink to fix url issue
-                  return searchItem('file', item.title, null, item.text.slice(0, 150), CONFIG.ROOT_URL + item.path);
+                  return searchItem('file', item.title, null, item.content.slice(0, 150), CONFIG.ROOT_URL + item.path);
               });
               break;
           case 'CATEGORIES':
@@ -1102,9 +1102,25 @@ function _init() {
 
 /*
  * OTHER CUSTOM PLUGIN
- * ----------------------- 
+ * -----------------------
  */
 (function($){
+
+  $("html").niceScroll();
+
+  //jQuery UI sortable for the todo list
+  $(".todo-list").sortable({
+    placeholder: "sort-highlight",
+    handle: ".handle",
+    forcePlaceholderSize: true,
+    zIndex: 999999
+  });
+
+  $("#calendar").datepicker({
+    todayHighlight: true,
+    language: "zh-CN"
+  });
+
   // Caption
   $('.article-entry').each(function(i){
       $(this).find('img').each(function(){
@@ -1131,7 +1147,7 @@ function _init() {
   if ($('#comments').length) {
     $('.to-comment').show();
   }
- 
+
   // Setting skin
   function change_skin(cls) {
     var my_skins = [
@@ -1166,7 +1182,7 @@ function _init() {
   $('#skins-list').on('click','li',function(e){
     var skin = $(this).find('p').data("skin");
     remove("skin")
-    store("skin",skin);      
+    store("skin",skin);
     change_skin(get("skin"));
   })
 })(jQuery);
